@@ -31,7 +31,9 @@ cp .env.example .env
 ## Run migrations
 
 ```bash
-python manage.py makemigrations
+python manage.py makemigrations home
+python manage.py makemigrations blog
+
 ```
 
 ```bash
