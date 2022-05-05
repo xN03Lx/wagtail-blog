@@ -48,3 +48,13 @@ python manage.py runserver
 
 [http://localhost:8000/blog/](http://localhost:8000/blog/)  
 [http://localhost:8000/login/](http://localhost:8000/login/)
+
+## Blog Estructure
+
+```
+home(HomePage)
+├── blog (BlogListingPage)
+│   ├──post(BlogDetailPage)
+│
+└── categories(BlogCategory)
+```
