@@ -25,7 +25,7 @@ following the env-example file.
 Configure your .env file
 
 ```bash
-cp .env-example .env
+cp .env.example .env
 ```
 
 ## Run migrations
