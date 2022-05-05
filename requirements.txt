@@ -2,3 +2,4 @@ Django>=4.0,<4.1
 wagtail>=2.16,<2.17
 django-allauth==0.50.0
 django-recaptcha==3.0.0
+python-dotenv==0.20.0
