@@ -1,0 +1,52 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+<div class="square">
+    <a style="text-decoration: none" href="{{ request.META.HTTP_REFERER }}">
+        <div class="square-content">
+            <i class="material-icons-outlined">
+                arrow_back_ios
+            </i>
+        </div>
+    </a>
+
+</div>
+<div class="row g-0">
+    <div class="col-md-12">
+        <div class="card-body my-card-body card-detail row">
+            <h5 class="card-title w-100 col-12">{{ page.title }}</h5>
+            <div class="card-text w-100 item-content col-12">
+                <div class="item-card" style="margin-left: 10px">
+                    <i class="material-icons double-arrow">
+                        schedule
+                    </i>
+                    <small class="text-muted">{{ page.first_published_at |timesince}} ago</small>
+                </div>
+                {% if page.categories.count %}
+                <div class="item-card">
+                    <i class="material-icons-outlined double-arrow">
+                        label
+                    </i>
+                    {% for cat in page.categories.all %}
+                    <small class="text-muted category-item"><a href="/blog/category/{{ cat.slug }}/?page=1">
+                            {{ cat.name }}
+                        </a>{% if not forloop.last %}, {% endif %}</small>
+
+                    {% endfor %}
+
+                </div>
+                {% endif %}
+                <div class="item-card">
+                    <i class="material-icons-outlined double-arrow">
+                        chat_bubble_outline
+                    </i>
+                    <small class="text-muted">0</small>
+                </div>
+            </div>
+            <div class="col-12">
+                {% image page.blog_image fill-321x260 as main_image %}
+                <img src="{{ main_image.url }}" class="img-fluid my-card-image rounded-start" alt="...">
+            </div>
+
+            <div class="card-text w-100 col-12">{{ page.content|richtext }}</div>
+        </div>
+    </div>
+</div>

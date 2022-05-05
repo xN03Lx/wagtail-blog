@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% load wagtailcore_tags wagtailimages_tags %}
+
+
+{% block content %}
+
+<div class="container  d-flex justify-content-center py-5">
+    <div class="card my-card-detail shadow-sm">
+        {% include "blog/blog_card_detail.html" with page=page %}
+    </div>
+</div>
+
+{% endblock %}

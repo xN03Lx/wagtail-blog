@@ -1,0 +1,10 @@
+<ul class="navbar-nav sub-nav">
+    <li class="nav-item {% if in_home %} active {% endif %}">
+        <a class="nav-link" href="/blog/?page=1">Home</a>
+    </li>
+    {% for cat in categories %}
+    <li class="nav-item {% if current_url == cat.get_url_path  %}active {% endif %}">
+        <a class="nav-link" href="/blog/category/{{ cat.slug }}/?page=1">{{ cat.name }}</a>
+    </li>
+    {% endfor %}
+</ul>

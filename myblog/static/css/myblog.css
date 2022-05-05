@@ -1,0 +1,322 @@
+.custom-nav {
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 5%), inset 0 -1px 0 rgb(0 0 0 / 15%);
+  background-color: rgba(255, 255, 255, 0.95);
+  padding-bottom: 0px !important;
+}
+
+.sub-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.sub-nav .active {
+  border-bottom: solid 5px #ff6000 !important;
+  margin-bottom: 0px !important;
+}
+
+.sub-nav .nav-item {
+  margin-bottom: 5px;
+  margin-left: 25px;
+}
+
+.sub-nav .nav-link {
+  color: #4e4e4e !important;
+}
+.searchBox {
+  background: #f8f8f8;
+  height: 49px;
+  border-radius: 40px;
+  width: 847px;
+}
+
+.searchButton {
+  color: white;
+  float: right;
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  background: #ff6000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+  border: none;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+.searchInput {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  color: #2f3640;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 40px;
+  width: 90%;
+  padding: 0 6px;
+  margin-left: 25px;
+  margin-top: 5px;
+}
+
+.primary-color {
+  background-color: #ff6000 !important;
+}
+
+@media screen and (max-width: 620px) {
+  .searchBox:hover > .searchInput {
+    width: 150px;
+    padding: 0 6px;
+  }
+}
+
+.container-fluid {
+  background-color: #f8f8f8 !important;
+}
+
+/* footer */
+.footer-cust {
+  background-color: #4e4e4e;
+  color: #ffffff;
+  height: 71px !important;
+}
+
+.footer-cust .container-fluid {
+  display: flex;
+  justify-content: space-between;
+  background-color: inherit !important;
+}
+
+.footer-cust .container-fluid span {
+  margin-left: 40px;
+}
+.footer-cust .container-fluid .material-icons {
+  border: 1px solid white;
+  padding: 4px;
+  margin-top: -10px;
+  margin-right: 40px;
+  font-size: 31px;
+  cursor: pointer;
+}
+
+/* blog */
+
+.my-card {
+  height: 280px;
+  width: 85%;
+}
+
+.blog-list-cont {
+  display: flex;
+  justify-content: center;
+}
+
+.my-card-image {
+  height: 280px !important;
+}
+
+.double-arrow {
+  position: relative;
+  top: 2px;
+  font-size: 14px !important;
+}
+
+.read-more {
+  font-weight: bold;
+}
+
+.my-card-body {
+  align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100% !important;
+}
+
+.my-card-body .card-title {
+  margin-bottom: 0px !important;
+  font-weight: 600;
+  margin-top: 15px;
+}
+.my-card-body .item-card {
+  margin-right: 10px !important;
+  font-size: 16px !important;
+}
+
+.my-card-body .item-card .text-muted {
+  color: #4885ed !important;
+}
+
+.item-content {
+  display: contents;
+}
+.item-card .category-item {
+  cursor: pointer;
+}
+.item-card .category-item a {
+  text-decoration: none !important;
+}
+
+/* pag */
+.pagination-outer {
+  text-align: center;
+}
+.pagination {
+  font-family: "Poppins", sans-serif;
+  display: inline-flex;
+  position: relative;
+}
+.pagination li a.page-link {
+  color: #444;
+  background: #f1f1f1;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 40px;
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  margin: 0 5px;
+  border: none;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease 0.15s;
+}
+
+.page-item .page-link {
+  border-top-left-radius: 1.25rem !important;
+  border-bottom-left-radius: 1.25rem !important;
+}
+
+.pagination li a.page-link:hover,
+.pagination li a.page-link:focus,
+.pagination li.active a.page-link:hover,
+.pagination li.active a.page-link {
+  color: #fff;
+  background: transparent;
+}
+.pagination li a.page-link:before,
+.pagination li a.page-link:after {
+  content: "";
+  background-color: #4d4d4d;
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: -1;
+  transition: all 0.3s ease 0s;
+}
+
+.pagination li a.page-link:hover:before,
+.pagination li a.page-link:focus:before,
+.pagination li.active a.page-link:hover:before,
+.pagination li.active a.page-link:before {
+  top: 0;
+}
+.pagination li a.page-link:hover:after,
+.pagination li a.page-link:focus:after,
+.pagination li.active a.page-link:hover:after,
+.pagination li.active a.page-link:after {
+  transform: scaleX(0);
+}
+
+.page-link-color {
+  background: #ffffff;
+}
+@media only screen and (max-width: 480px) {
+     .pagination {
+    font-size: 0;
+    display: inline-block;
+  }
+      .pagination li {
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px 0;
+  }
+}
+
+.p-prev {
+  margin-right: 20px;
+}
+
+.p-next {
+  margin-left: 20px;
+}
+
+/* detail*/
+.my-card-detail {
+  width: 85%;
+}
+.card-detail {
+  padding: 2rem 4rem !important;
+}
+
+.card-detail .card-title {
+  font-size: 35px;
+  margin-bottom: 32px !important;
+}
+
+.card-detail .my-card-image {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.card-detail .my-card-image {
+  width: 100%;
+  height: 550px !important;
+}
+
+.square {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: #ff6000;
+  top: 6%;
+  left: -3%;
+  border-radius: 5px;
+}
+.square-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+}
+
+.my-page-link-disabled a {
+  color: #bdbdbd !important;
+  pointer-events: none !important;
+}
+
+.my-page-link {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 40px;
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  color: #565555;
+  margin: 0 5px;
+  border: none;
+  border-radius: 50%;
+  text-decoration: none;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease 0.15s;
+}
+.my-page-link:hover {
+  color: #4d4d4d !important;
+}
+
+.pag-container {
+  margin-bottom: 50px;
+  margin-top: 35px;
+}

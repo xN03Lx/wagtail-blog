@@ -1,0 +1,95 @@
+{% load static wagtailcore_tags wagtailuserbar blog_tags %}
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>
+        {% block title %}
+        {% if page.seo_title %}{{ page.seo_title }}{% else %}{{ page.title }}{% endif %}
+        {% endblock %}
+        {% block title_suffix %}
+        {% wagtail_site as current_site %}
+        {% if current_site and current_site.site_name %}- {{ current_site.site_name }}{% endif %}
+        {% endblock %}
+    </title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    {# Global stylesheets #}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/myblog.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+        rel="stylesheet">
+
+    {% block extra_css %}
+    {# Override this in templates to add extra stylesheets #}
+    {% endblock %}
+</head>
+
+<body class="{% block body_class %}{% endblock %}">
+    {% wagtailuserbar %}
+    <nav class="navbar navbar-expand-lg bg-grey custom-nav">
+        <div class="row" style="width: 100%;">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-lg-3 col-md-4">
+                        <h1>Logo</h1>
+                    </div>
+                    <div class="col-lg-8 col-md-6">
+                        <div class="searchBox">
+                            <form action="/blog" method="get">
+                                <input class="searchInput" type="text" name="query" {% if search_query %}
+                                    value="{{ search_query }}" {% endif %} placeholder="">
+                                <button class="searchButton" href="#">
+                                    <i class="material-icons">
+                                        search
+                                    </i>
+                                </button>
+                            </form>
+
+
+                        </div>
+                    </div>
+                    <div class="col-lg-1  col-md-2 text-center">
+                        <a class="navbar-brand" href="#">
+                            <img src="//www.gravatar.com/avatar/75d23af433e0cea4c0e45a56dba18b30?s=50&d=mm"
+                                alt="Avatar Logo" style="width:40px;" class="rounded-pill">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                {% show_categories %}
+            </div>
+        </div>
+
+    </nav>
+    {% block content %}{% endblock %}
+
+    <footer class="flex-shrink-0 py-4 footer-cust">
+        <div class="container-fluid">
+            <span>
+                Derechos reservados empresa 2021
+            </span>
+            <i class="material-icons" onclick="document.documentElement.scrollTop = 0">
+                arrow_upward
+            </i>
+
+        </div>
+    </footer>
+
+    {# Global javascript #}
+    <script type="text/javascript" src="{% static 'js/myblog.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    {% block extra_js %}
+    {# Override this in templates to add extra javascript #}
+    {% endblock %}
+</body>
+
+</html>
